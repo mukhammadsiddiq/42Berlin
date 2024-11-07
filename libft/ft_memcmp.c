@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 16:04:03 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/07 15:18:24 by mukibrok         ###   ########.fr       */
+/*   Created: 2024/11/06 19:29:39 by mukibrok          #+#    #+#             */
+/*   Updated: 2024/11/07 12:46:43 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	if (!n)
+		return (0);
+	while (--n)
+	{
+		if (*(unsigned char *) s1 != *(unsigned char *) s2)
+			return (*(unsigned char *) s1 - *(unsigned char *) s2);
+		s1++;
+		s2++;
+	}
+	return (*(unsigned char *) s1 - *(unsigned char *) s2);
 }

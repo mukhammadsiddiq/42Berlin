@@ -6,13 +6,13 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 17:01:46 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/06 17:42:22 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/07 15:04:56 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_islower(int c)
+static int	ft_islower(int c)
 {
 	return (c >= 'a' && c <= 'z');
 }

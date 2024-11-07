@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 16:04:03 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/07 15:18:24 by mukibrok         ###   ########.fr       */
+/*   Created: 2024/11/07 15:35:23 by mukibrok          #+#    #+#             */
+/*   Updated: 2024/11/07 16:02:32 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	*ft_calloc(size_t amount, size_t size)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	unsigned char	*arr;
+
+	arr = NULL;
+	if (size == 0 || amount == 0)
+	{
+		size = 1;
+		amount = 1;
+	}
+	arr = malloc(size * amount);
+	if (!arr)
+		return (NULL);
+	while (*arr)
+		*(arr++) = 0;
+	return (arr);
 }

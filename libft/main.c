@@ -10,7 +10,6 @@ int	main(void)
 	char	move_dst1[30];
 	char	*strlcpy_src = "Mukhammad";
 	char	strldst[1];
-	char	strldst1[20];
 	char	*strlcattest = "siddiq";
 	char	strlcatdst[17] = "Mukhammad";
 
@@ -39,7 +38,6 @@ int	main(void)
 	printf("------------------------\n");
 	char str[] = "Hello world, how are you?";
     char *token;
-    char *delimiter = "w";
     token = ft_strchr(str, 'w');
     printf("ft_strchr->%c\n", *token);
 	char sstr[] = "Hello world, how are you?";
@@ -58,11 +56,38 @@ int	main(void)
     unsigned char *result;
     unsigned char *result1;
 
-    result = memchr(strmemchr, 'o', sizeof(strmemchr));
-    result1 = ft_memchr(strmemchr, 'o', sizeof(strmemchr));
+    result = memchr(strmemchr, 'o', 14);
+    result1 = ft_memchr(strmemchr, 'o', 14);
 
 	printf("ft_memchr: %s\n", result);
 	printf("memchr: %s\n", result1);
-
+	printf("------------------------\n");
+	char	*arr = "siddiq  ggfd";
+	char	*arr1 = "siddiq ggfd";
+	printf("ft_memcmp: %d\n", ft_memcmp(arr, arr1, 8));
+	printf("memcmp: %d\n", memcmp(arr, arr1, 8));
+	printf("------------------------\n");
+	char *ftt_strnstr = "Utility functions from BSD systems (libbsd, -lbsd)";
+	char *find = "from";
+	char *resultstr = ft_strnstr(ftt_strnstr, find, strlen(ftt_strnstr));
+	printf("ft_strnstr: %s\n", resultstr);
+	printf("------------------------\n");
+	char *ftt_strdup = "school";
+	char *ftt_arr = ft_strdup(ftt_strdup);
+	char *ftt_arr1 = strdup(ftt_strdup);
+	printf("ft_strdup: %s\n", ftt_arr);
+	printf("strdup: %s\n", ftt_arr1);
+	printf("------------------------\n");
+	int *ftt_calloc = ft_calloc(17, sizeof(int));
+	for (int i = 0; i < 17; i++)
+	{
+		printf("%i->", ftt_calloc[i]);
+	}
+	printf("------------------------\n");
+	char *ftt_substr = "The string from which to create the substring.";
+	char *substring = ft_substr(ftt_substr, 1, ft_strlen(ftt_substr));
+	printf("ft_substr: %s", substring);
+	printf("------------------------\n");
+	printf("------------------------\n");
 	return (0);
 }
