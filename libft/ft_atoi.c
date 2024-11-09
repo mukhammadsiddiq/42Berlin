@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 14:22:14 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/07 15:02:54 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/08 14:11:35 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_isspace(int c)
 {
-	return (c == 32 || c >= 9 && c <= 13);
+	return (c == 32 || (c >= 9 && c <= 13));
 }
 
 int	ft_atoi(const char *s)
