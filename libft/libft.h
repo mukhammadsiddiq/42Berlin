@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:03:25 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/11 18:54:25 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/11 22:06:40 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include <stdio.h>
 # include <string.h>
+# include <bsd/string.h>
 # include <ctype.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -25,7 +26,6 @@ typedef struct s_list
 	void	*context;
 	struct s_list	*next;
 }	t_list;
-
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int i);

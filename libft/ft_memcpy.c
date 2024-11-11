@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 13:36:52 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/06 15:40:49 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/11 22:00:02 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dest, void *src, size_t n)
 	dst = dest;
 	s = src;
 	i = 0;
+	if (dest == NULL || src == NULL || n == 0)
+		return (NULL);
 	while (n--)
 	{
 		dst[i] = s[i];
@@ -28,3 +30,11 @@ void	*ft_memcpy(void *dest, void *src, size_t n)
 	}
 	return (dest);
 }
+
+// int	main(void)
+// {
+// 	char *src = "NUL";
+// 	char *dst = NULL;
+// 	ft_memcpy(dst, src, 10);
+// 	printf("memcpy: %s", dst);
+// }
