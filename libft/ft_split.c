@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 16:52:57 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/09 18:28:59 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:49:05 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ char	**ft_split(char const *s, char c)
 			k++;
 		}
 	}
-	splitted[k] = '\0';
+	splitted[k] = NULL;
 	return (splitted);
 }
 
