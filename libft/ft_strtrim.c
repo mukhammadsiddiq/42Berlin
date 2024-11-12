@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 14:13:13 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/08 18:12:44 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:22:28 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	while ((char)s1[start] && !is_valid(set, (char)s1[start]))
 		start++;
-	len = end - start + 1;
+	len = end - start + 2;
 	trimmed = (char *) malloc(sizeof(char) * len);
 	if (!trimmed)
 		return (NULL);
@@ -48,3 +48,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trimmed[i] = '\0';
 	return (trimmed);
 }
+
