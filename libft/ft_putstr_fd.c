@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 19:51:49 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/11 19:52:59 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:38:31 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while(*s)
+	while (*s)
 		write(fd, s++, 1);
 }
