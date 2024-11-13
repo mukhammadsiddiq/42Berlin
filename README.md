@@ -8,33 +8,7 @@
 
 <td>
 
-
-## Contents
-
-1. **Foreword**
-2. **Introduction**
-3. **General Rules**
-
-### Exercises
-
-Each exercise covers fundamental programming skills, helping you solidify your coding foundations. Navigate through the table below for a quick overview:
-
-| Exercise | Link                                                                                               |
-|----------|----------------------------------------------------------------------------------------------------|
-| [C01](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/C01) | 
-| [C02](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/C02) | 
-| [C03](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/C03) | 
-| [C04](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/C04) | 
-| [C05](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/C05) | 
-| [C06](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/C06) | 
-| [C07](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/C07) | 
-| [C08](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/C08) | 
-| [C09](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/C09) | 
-| [rush00](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/rush00) | 
-| [rush01](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/rush01) | 
-| [rush02](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/rush02) | 
-| [shell00](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/shell00) | 
-| [shell01](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/shell01) | 
+| [Piscine Projects] | [C01](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/C01) |  [C02](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/C02) |  [C03](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/C03) |  [C04](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/C04) |  [C05](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/C05) |  [C06](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/C06) |  [C07](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/C07) | [C08](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/C08) | [C09](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/C09) |  [rush00](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/rush00) |  [rush01](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/rush01) |  [rush02](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/rush02) |  [shell00](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/shell00) |  [shell01](https://github.com/mukhammadsiddiq/42Berlin-Guideline/tree/main/piscine_projects/shell01) | 
 </td> </tr> </table>
 
 <table>
