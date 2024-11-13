@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:38:41 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/13 19:07:55 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/13 19:59:24 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ static int	ft_length(int n, int *negative, int *number)
 		len++;
 		n /= 10;
 	}
-	printf("len: %d\n", len);
 	return (len);
 }
 
