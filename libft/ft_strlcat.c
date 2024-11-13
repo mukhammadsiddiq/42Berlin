@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 16:18:18 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/12 19:05:15 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/13 19:52:41 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,30 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	src_len;
 	size_t	dst_len;
 	size_t	i;
+	size_t	tmp;
 
 	src_len = ft_strlen(src);
 	dst_len = ft_strlen(dst);
-	if (src_len + dst_len >= size)
-		return (src_len + dst_len);
+	if (size <= dst_len)
+		return (src_len + size);
 	i = 0;
-	while (i < size - dst_len - 1)
+	tmp = dst_len;
+	while (i < size - dst_len - 1 && src[i])
 	{
-		dst[dst_len + i] = src[i];
+		dst[tmp] = src[i];
 		i++;
+		tmp++;
 	}
-	dst[dst_len + i] = '\0';
-	return (dst_len + src_len);
+	dst[tmp] = '\0';
+	return (src_len + dst_len);
 }
 
 // void test_strlcat(void)
 // {
-//     char dest1[9] = "Hello ";
-//     char src1[] = "world!";
-//     size_t size = 20;
+//     char dest1[30] = "there is no stars in the sky ";
+//     char dest2[30] = "there is no stars in the sky ";
+//     char *src1 = "the cake is a lie !\0I'm hidden lol\r\n";
+//     size_t size = strlen("there is no stars in the sky ") + 30 ;
 
 //     // Real strlcat
 //     printf("Testing strlcat:\n");
@@ -44,7 +48,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 //     printf("Real strlcat: %s (Length: %zu)\n", dest1, real_len);
 
 //     // Reset destination string and test ft_strlcat
-//     char dest2[20] = "Hello ";
 //     printf("Testing ft_strlcat:\n");
 //     size_t ft_len = ft_strlcat(dest2, src1, size);
 //     printf("ft_strlcat: %s (Length: %zu)\n", dest2, ft_len);

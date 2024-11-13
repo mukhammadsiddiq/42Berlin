@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 18:38:41 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/09 19:25:54 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/13 19:07:55 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ static int	ft_length(int n, int *negative, int *number)
 		len++;
 		n /= 10;
 	}
+	printf("len: %d\n", len);
 	return (len);
 }
 
@@ -45,7 +46,7 @@ char	*ft_itoa(int n)
 	number = (char *) malloc(sizeof(char) * size + 1);
 	if (!number)
 		return (NULL);
-	number[size + 1] = '\0';
+	number[size] = '\0';
 	while (tmp > 0)
 	{
 		number[--size] = (tmp % 10) + '0';
@@ -60,4 +61,6 @@ char	*ft_itoa(int n)
 // {
 // 	char	*arr = ft_itoa(atoi(argv[1]));
 // 	printf("arr: %s\n", arr);
+// 	int i = ft_strlen(arr);
+// 	printf("\n%d", arr[i]);
 // }
