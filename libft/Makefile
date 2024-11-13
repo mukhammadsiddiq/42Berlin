@@ -6,7 +6,7 @@
 #    By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/11 18:31:20 by mukibrok          #+#    #+#              #
-#    Updated: 2024/11/12 19:25:03 by mukibrok         ###   ########.fr        #
+#    Updated: 2024/11/13 18:06:59 by mukibrok         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,12 +29,12 @@ SRC =	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 		ft_strrchr.c ft_strtrim.c ft_strlen.c ft_strncmp.c ft_substr.c \
 		ft_tolower.c ft_toupper.c ft_itoa.c ft_striteri.c
 
-BONUS_SRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-			ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c
+# BONUS_SRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+# 			ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c
 
 # Object files
 OBJ = $(SRC:.c=.o)
-BONUS_OBJ = $(BONUS_SRC:.c=.o)
+# BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 # rules
 all: $(NAME)
@@ -49,13 +49,13 @@ $(NAME): $(OBJ)
 	$(RANLIB) $(NAME)
 
 # Target for the bonus part, includes both normal and bonus object files
-bonus: $(NAME) $(BONUS_OBJ)
-	$(AR) $(NAME) $(OBJ) $(BONUS_OBJ)
+bonus: $(NAME) #$(BONUS_OBJ)
+	$(AR) $(NAME) $(OBJ) #$(BONUS_OBJ)
 	$(RANLIB) $(NAME)
 
 # Clean object files and bonus object files
 clean:
-	$(RM) $(OBJ) $(BONUS_OBJ)
+	$(RM) $(OBJ) #$(BONUS_OBJ)
 
 # Clean everything (object files and library)
 fclean: clean
