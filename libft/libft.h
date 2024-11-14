@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: muxammad <muxammad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:03:25 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/13 19:19:30 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/14 16:48:17 by muxammad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # define LIBFT_H
 
 # include <stdio.h>
-# include <bsd/string.h>
+# include <string.h>
 # include <ctype.h>
 # include <stdlib.h>
 # include <unistd.h>
