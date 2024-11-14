@@ -3,63 +3,70 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: muxammad <muxammad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/09 18:38:41 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/13 19:59:24 by mukibrok         ###   ########.fr       */
+/*   Created: 2024/11/11 19:57:15 by mukibrok          #+#    #+#             */
+/*   Updated: 2024/11/14 23:29:43 by muxammad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_length(int n, int *negative, int *number)
+static size_t	ft_length(long n, int *negative)
 {
-	int	len;
+    size_t  len;
 
-	len = 0;
-	if (n < 0)
+    len = 0;
+    if (n == 0)
+        return (1);
+    if (n < 0)
 	{
-		len++;
-		*negative = 1;
-		n = -n;
-	}
-	*number = n;
-	while (n > 0)
+        len++;
+        *negative = 1;
+        n = -n;
+    }
+    while (n > 0)
 	{
-		len++;
-		n /= 10;
-	}
-	return (len);
+        len++;
+        n /= 10;
+    }
+    return (len);
 }
 
-char	*ft_itoa(int n)
-{
-	int		negative;
-	int		tmp;
-	int		size;
-	char	*number;
+char *ft_itoa(int n) {
+    int negative;
+    size_t size;
+    long num;
+    char *number;
 
+	num = n;
 	negative = 0;
-	number = NULL;
-	size = ft_length(n, &negative, &tmp);
-	number = (char *) malloc(sizeof(char) * size + 1);
-	if (!number)
-		return (NULL);
-	number[size] = '\0';
-	while (tmp > 0)
+    size = ft_length(num, &negative);
+    number = (char *)malloc(sizeof(char) * (size + 1));
+    if (!number)
+        return NULL;
+    number[size] = '\0';
+    if (num == 0)
 	{
-		number[--size] = (tmp % 10) + '0';
-		tmp /= 10;
-	}
-	if (negative)
-		number[0] = '-';
-	return (number);
+        number[0] = '0';
+        return number;
+    }
+    if (negative)
+        num = -num;
+    while (num > 0)
+	{
+        number[--size] = (num % 10) + '0';
+        num /= 10;
+    }
+    if (negative)
+        number[0] = '-';
+    return number;
 }
 
-// int	main(int argc, char **argv)
-// {
-// 	char	*arr = ft_itoa(atoi(argv[1]));
-// 	printf("arr: %s\n", arr);
-// 	int i = ft_strlen(arr);
-// 	printf("\n%d", arr[i]);
+// int main() {
+//     char *arr = ft_itoa(-2147483648LL);
+//     printf("arr: %s\n", arr);
+//     free(arr); // Freeing allocated memory
+//     return 0;
 // }
+
