@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:40:16 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/15 09:46:05 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/15 11:18:46 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,19 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
-	size_t				i;
+	char	*d;
+	char	*s;
+	size_t	i;
 
 	if (!dest && !src)
 		return (NULL);
-	d = (unsigned char *)dest;
-	s = (const unsigned char *)src;
+	d = (char *)dest;
+	s = (char *)src;
 	if (d < s)
 	{
 		i = 0;
-		while (i < n)
-		{
+		while (i++ < n)
 			d[i] = s[i];
-			i++;
-		}
 	}
 	else if (d > s)
 	{
