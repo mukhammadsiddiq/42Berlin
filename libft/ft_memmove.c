@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:40:16 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/15 11:24:30 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/15 14:09:28 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	else
 	{
 		i = 0;
-		while (i++ < n)
+		while (i < n)
+		{
 			d[i] = s[i];
+			i++;
+		}
 	}
 	return (dest);
 }
