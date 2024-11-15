@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 14:13:13 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/15 10:44:52 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/15 11:08:30 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 
 	trimmed = NULL;
-	if (!s1)
-		return (NULL);
 	end = ft_strlen(s1);
 	if (end == 0)
 		return (ft_strdup(""));
@@ -46,18 +44,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	i = 0;
 	while (start < end)
-	{
-		trimmed[i] = s1[start + i];
-		i++;
-	}
+		trimmed[i++] = s1[start++];
 	trimmed[i] = '\0';
 	return (trimmed);
 }
-
 // int	main(int argc, char **argv)
 // {
-// 	char s1[] = "";
+// 	char s1[] = "lorem ipsum dolor sit amet";
 // 	char *s3 = argv[1];
-// 	char *s2 = ft_strtrim(s1, " \t\n");
+// 	char *s2 = ft_strtrim(s1, "l ");
 // 	printf("%s\n", s2);
 // }

@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 18:08:27 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/15 10:24:14 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/15 11:07:55 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,18 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	int	n;
+	int	end;
 
-	if (!s)
-		return (NULL);
 	n = ft_strlen(s);
+	end = n;
 	while (n >= 0)
 	{
 		if (s[n] == (char)c)
 			return ((char *)s + n);
 		n--;
 	}
+	if ((char)c == '\0')
+		return ((char *)s + end);
 	return (NULL);
 }
 
