@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 14:13:13 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/15 10:44:23 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/15 10:44:52 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (trimmed);
 }
 
-int	main(int argc, char **argv)
-{
-	char s1[] = "";
-	char *s3 = argv[1];
-	char *s2 = ft_strtrim(s1, " \t\n");
-	printf("%s\n", s2);
-}
+// int	main(int argc, char **argv)
+// {
+// 	char s1[] = "";
+// 	char *s3 = argv[1];
+// 	char *s2 = ft_strtrim(s1, " \t\n");
+// 	printf("%s\n", s2);
+// }
