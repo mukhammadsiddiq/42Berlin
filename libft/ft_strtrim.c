@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muxammad <muxammad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 14:13:13 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/14 19:04:21 by muxammad         ###   ########.fr       */
+/*   Updated: 2024/11/15 10:14:19 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 
 	trimmed = NULL;
-	end = ft_strlen(s1) - 1;
+	end = ft_strlen(s1);
+	if (*s1 == '\0')
+		return (ft_strdup(""));
 	start = 0;
 	while (is_set(set, s1[start]) && s1[start])
 		start++;
-	while (end > start && is_set(set, s1[end]))
+	while (end > start && is_set(set, s1[end - 1]))
 		end--;
-	trimmed = (char *) malloc(sizeof(*s1) * (end - start + 2));
+	trimmed = (char *) malloc(sizeof(*s1) * (end - start + 1));
 	if (!trimmed)
 		return (NULL);
 	i = 0;
@@ -48,7 +50,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 }
 // int	main(int argc, char **argv)
 // {
-// 	char s1[] = "lorem ipsum dolor sit amet";
+// 	char s1[] = "";
 // 	char *s3 = argv[1];
 // 	char	*s2 = ft_strtrim(s1, "te");
 // 	printf("%s\n", s2);
