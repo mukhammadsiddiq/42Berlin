@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 14:13:13 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/15 10:43:04 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/15 10:44:23 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	while (start < end)
 	{
-		trimmed[i++] = s1[start + i];
+		trimmed[i] = s1[start + i];
 		i++;
 	}
 	trimmed[i] = '\0';
