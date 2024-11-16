@@ -59,5 +59,8 @@
   "C_Cpp.formatting": "vcFormat",
   "editor.insertSpaces": false,
   "editor.comments.insertSpace": false,
-  "editor.detectIndentation": false
+"editor.detectIndentation": false,
+"files.associations": {
+	"libft.h": "c"
+}
 }
