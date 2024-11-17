@@ -5,26 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 19:57:15 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/15 09:30:19 by mukibrok         ###   ########.fr       */
+/*   Created: 2024/11/09 18:38:41 by mukibrok          #+#    #+#             */
+/*   Updated: 2024/11/13 21:15:37 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_length(long n, int *negative)
+static int	ft_length(int n, int *negative, int *number)
 {
-	size_t	len;
+	int	len;
 
 	len = 0;
-	if (n == 0)
-		return (1);
 	if (n < 0)
 	{
 		len++;
 		*negative = 1;
 		n = -n;
 	}
+	*number = n;
 	while (n > 0)
 	{
 		len++;
@@ -36,37 +35,31 @@ static size_t	ft_length(long n, int *negative)
 char	*ft_itoa(int n)
 {
 	int		negative;
-	size_t	size;
-	long	num;
+	int		tmp;
+	int		size;
 	char	*number;
 
-	num = n;
 	negative = 0;
-	size = ft_length(num, &negative);
-	number = (char *)malloc(sizeof(char) * (size + 1));
+	number = NULL;
+	size = ft_length(n, &negative, &tmp);
+	number = (char *)malloc(sizeof(char) * size + 1);
 	if (!number)
 		return (NULL);
 	number[size] = '\0';
-	if (num == 0)
-		number[0] = '0';
-	if (negative)
-		num = -num;
-	while (num > 0)
+	while (tmp > 0)
 	{
-		number[--size] = (num % 10) + '0';
-		num /= 10;
+		number[--size] = (tmp % 10) + '0';
+		tmp /= 10;
 	}
 	if (negative)
 		number[0] = '-';
 	return (number);
 }
 
-// int	main(void)
+// int	main(int argc, char **argv)
 // {
-// 	char	*arr;
-
-// 	arr = ft_itoa(0);
+// 	char	*arr = ft_itoa(atoi(argv[1]));
 // 	printf("arr: %s\n", arr);
-// 	free(arr);
-// 	return (0);
+// 	int i = ft_strlen(arr);
+// 	printf("\n%d", arr[i]);
 // }
