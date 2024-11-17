@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 15:35:23 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/12 14:56:24 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/16 11:10:42 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,10 @@
 
 void	*ft_calloc(size_t amount, size_t size)
 {
-	unsigned char	*arr;
-	size_t			i;
+	char	*arr;
+	size_t	i;
 
 	i = 0;
-	arr = NULL;
-	if (amount == 0)
-		amount = 1;
 	arr = malloc(size * amount);
 	if (!arr)
 		return (NULL);

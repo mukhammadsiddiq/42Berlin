@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 16:52:57 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/12 19:49:05 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/17 14:22:25 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,20 @@ static size_t	count_words(char const *s, char c)
 		}
 	}
 	return (words);
+}
+
+static char	*free_alloc(char **arr, int k)
+{
+	int	i;
+
+	i = 0;
+	while (i < k)
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+	return (NULL);
 }
 
 static char	*allocated(char	*s, int *i, char c)
@@ -66,24 +80,23 @@ static char	*allocated(char	*s, int *i, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**splitted;
-	char	*str;
 	int		i;
 	int		k;
 
 	i = 0;
 	k = 0;
-	str = (char *) s;
-	splitted = NULL;
 	splitted = (char **) malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!splitted)
 		return (NULL);
-	while (str[i])
+	while (s[i])
 	{
-		while (str[i] && not_valid(str[i], c))
+		while (s[i] && not_valid(s[i], c))
 			i++;
-		if (str[i])
+		if (s[i])
 		{
-			splitted[k] = allocated(str, &i, c);
+			splitted[k] = allocated((char *)s, &i, c);
+			if (!splitted[k])
+				return (free_alloc(splitted, k), NULL);
 			k++;
 		}
 	}
@@ -93,7 +106,7 @@ char	**ft_split(char const *s, char c)
 
 // int	main(void)
 // {
-// 	char *splt_str = "dcsdc dcsc      cdscd      cdsdc      sdc cd   ";
+// 	char *splt_str = "hello!";
 // 	char	c = ' ';
 // 	char	**splitted = ft_split(splt_str, c);
 // 	printf("count_words -> %ld\n", count_words(splt_str, c));
@@ -109,4 +122,5 @@ char	**ft_split(char const *s, char c)
 // 		printf("\n");
 // 		i++;
 // 	}
+// 	free_alloc(splitted, i);
 // }

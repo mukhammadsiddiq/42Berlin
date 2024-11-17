@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 08:19:35 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/16 08:36:43 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/17 14:25:56 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
 
+	if (!lst)
+		lst = NULL;
 	while (*lst)
 	{
 		tmp = (*lst)->next;
