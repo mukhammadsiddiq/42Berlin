@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 14:33:39 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/15 18:58:12 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/21 19:14:36 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,18 @@ t_list	*ft_lstnew(void *content)
 	return (new_list);
 }
 
-//int main(void)
-//{
-//	t_list	*list;
-//	t_list	*second;
-//	char	*num;
-//	char	*secondchar;
+// int main(void)
+// {
+// 	t_list	*list;
+// 	t_list	*second;
 
-//	num = "first";
-//	secondchar = "second";
-//	list = ft_lstnew(num);
-//	second = ft_lstnew(secondchar);
-//	ft_lstadd_front(&list, second);
-//	if (list)
-//	{
-//		printf("list: %s\n", (char *)list->content);
-//		printf("list: %p\n", list->content);
-//		printf("list: %p\n", list->next);
-//	}
-//}
+// 	list = ft_lstnew("first");
+// 	second = ft_lstnew("Second");
+// 	ft_lstadd_front(&list, second);
+// 	if (list)
+// 	{
+// 		printf("list: %s\n", (char *)list->content);
+// 		printf("list: %p\n", list->content);
+// 		printf("list: %p\n", list->next);
+// 	}
+// }
