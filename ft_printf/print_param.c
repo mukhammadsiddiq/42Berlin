@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   print_param.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/21 16:00:42 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/21 19:07:56 by mukibrok         ###   ########.fr       */
+/*   Created: 2024/11/21 17:22:11 by mukibrok          #+#    #+#             */
+/*   Updated: 2024/11/21 19:06:37 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
+#include "ft_printf.h"
 
-# define FT_PRINTF_H
-# include <stdlib.h>
-# include <stdio.h>
-# include <unistd.h>
-# include <stdarg.h>
+int	print_param(char specifier, va_list ptr)
+{
+	int count;
 
-int	ft_putchar(int c);
-int		ft_printf(const char *str, ...);
-int		print_param(char specifier, va_list ptr);
-
-#endif
+	count = 0;
+	if (specifier == 'c')
+		ft_putchar(va_arg(ptr, int));
+	return (count);
+}
