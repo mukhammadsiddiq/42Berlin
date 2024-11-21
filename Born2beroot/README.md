@@ -58,7 +58,61 @@ The Born2BeRoot project is a practical exercise in virtual machine setup and Lin
 
 ### Setting Up SSH and Firewall
 
-1. Install and configure SSH:
-   ```bash
-   sudo apt update && sudo apt install openssh-server
-   sudo vim /etc/ssh/sshd_config
+1. **Install and Configure SSH**:
+   - Update your system and install the SSH server:
+     ```bash
+     sudo apt update && sudo apt install openssh-server
+     ```
+   - Open the SSH configuration file for editing:
+     ```bash
+     sudo vim /etc/ssh/sshd_config
+     ```
+   - Change the default SSH port from `22` to `4242`:
+     ```plaintext
+     Port 4242
+     ```
+   - Save and exit the file, then restart the SSH service:
+     ```bash
+     sudo systemctl restart ssh
+     ```
+
+2. **Verify SSH Configuration**:
+   - Check the status of the SSH service:
+     ```bash
+     sudo systemctl status ssh
+     ```
+   - Test SSH connectivity from your host system:
+     ```bash
+     ssh your_username@127.0.0.1 -p 4242
+     ```
+   - If a connection error occurs, clear the known hosts:
+     ```bash
+     rm ~/.ssh/known_hosts
+     ```
+
+3. **Set Up UFW (Uncomplicated Firewall)**:
+   - Install UFW if not already installed:
+     ```bash
+     sudo apt install ufw
+     ```
+   - Allow SSH and the custom port (4242):
+     ```bash
+     sudo ufw allow 4242
+     sudo ufw enable
+     ```
+   - Check the current status of UFW:
+     ```bash
+     sudo ufw status numbered
+     ```
+
+4. **Verify Firewall Rules**:
+   - Ensure the firewall is correctly configured to allow SSH access:
+     ```bash
+     sudo ufw status
+     ```
+   - Confirm that the `4242` port is listed as "ALLOW".
+
+---
+
+With these steps, your system is now configured to allow secure remote access via SSH on port 4242 and is protected by a firewall. Always ensure that only necessary ports are open to minimize vulnerabilities.
+
