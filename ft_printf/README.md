@@ -28,7 +28,7 @@ This project focuses on duplicating the behavior of the C function `printf()`. T
 - Hexadecimal `int` type variables (uppercase and lowercase).
 - `pointer` type variables.
 
-Further details can be found in the [subject of the project](https://github.com/PublioElio/School-42-printf/blob/main/printf.es.subject.pdf).
+Further details can be found in the [subject of the project](https://github.com/mukhammadsiddiq/42Berlin_Guideline/blob/main/printf.es.subject.pdf).
 
 ## Index
 - [Structure](#structure)
