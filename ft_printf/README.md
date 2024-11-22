@@ -4,7 +4,7 @@
 
 <h1 align="center">School 42 printf()</h1>
 
-This repository contains all files for the __printf__ project from the School 42 Málaga cursus. The project aims to replicate the functionality of the [`printf()`](https://es.wikipedia.org/wiki/Printf) function from the `stdio.h` library.
+This repository contains all files for the __printf__ project from the School 42 Berlin cursus. The project aims to replicate the functionality of the [`printf()`](https://es.wikipedia.org/wiki/Printf) function from the `stdio.h` library.
 
 <h2 align="center">
 	<a href="#about">About</a>
