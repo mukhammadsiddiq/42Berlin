@@ -1,3 +1,10 @@
+# Born 2 Be Root
+
+![Born 2 Be Root](path/to/your/image.png)
+
+Welcome to the **Born 2 Be Root** project! This repository is dedicated to creating a fully secure virtual machine environment, combining cutting-edge technologies and robust security practices.
+
+
 # Born2BeRoot Setup and Configuration Guide
 
 Welcome to the Born2BeRoot project! This guide will help you download, install, and configure a secure virtual machine (VM) while introducing essential Linux administration concepts.
