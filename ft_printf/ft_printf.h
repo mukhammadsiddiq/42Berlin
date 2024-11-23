@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: muxammad <muxammad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 16:00:42 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/22 19:07:33 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/24 00:18:33 by muxammad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-void	ft_putchar(char c);
-void	print_char(int c, int *counter);
+void	print_char(char c, int *counter);
 void	print_str(char *str, int *counter);
+void	print_nbr(int n, int *counter);
+void	print_hex(unsigned int ln, int *counter, char x_X);
+void	print_uint(unsigned int ln, int *counter);
+void	print_ptr(void *pt, int *counter);
 int		ft_printf(const char *str, ...);
-int		print_param(char specifier, va_list ptr);
-void	print_nbr(long ln, int base, int *counter);
+void	print_param(char specifier, va_list ptr, int *counter);
 
 #endif

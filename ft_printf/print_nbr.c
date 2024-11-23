@@ -3,30 +3,61 @@
 /*                                                        :::      ::::::::   */
 /*   print_nbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: muxammad <muxammad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 16:18:08 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/22 19:14:06 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/23 23:41:45 by muxammad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	print_nbr(long ln, int base, int *counter)
+void	print_nbr(int n, int *counter)
 {
-	char	*form;
+	long	ln;
 
-	form = "0123456789abcdef";
+	ln = n;
 	if (ln < 0)
 	{
 		ln = -ln;
-		ft_putchar('-');
-		(*counter)++;
+		print_char('-', counter);
 	}
-	if (ln >= base)
-		print_nbr(ln / base, base, counter);
-	ft_putchar(form[ln % base]);
-	(*counter)++;
+	if (ln >= 10)
+	{
+		print_nbr(ln / 10, counter);
+		ln %= 10;
+	}
+	if (ln < 10)
+		print_char(ln + 48, counter);
+}
+
+void	print_hex(unsigned int ln, int *counter, char x_X)
+{
+	char	*form_x;
+
+	if (x_X == 'x')
+		form_x = "0123456789abcdef";
+	else
+		form_x = "0123456789ABCDEF";
+	if (ln >= 16)
+		print_hex(ln / 16, counter, x_X);
+	print_char(form_x[ln % 16], counter);
+}
+
+void	print_uint(unsigned int ln, int *counter)
+{
+	if (ln >= 10)
+		print_uint(ln / 10, counter);
+	print_char((ln % 10) + 48, counter);
+}
+
+void	print_ptr(void *pt, int *counter)
+{
+	unsigned long	ptr;
+
+	ptr = (unsigned long) pt;
+	print_str("0x", counter);
+	print_hex(ptr, counter, 'x');
 }
 
 // int main(void)
