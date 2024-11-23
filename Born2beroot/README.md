@@ -106,7 +106,7 @@ The Born2BeRoot project is a practical exercise in virtual machine setup and Lin
 2. Click on your Virtual Machine and select `Settings`
 3. Click `Network` then `Adapter 1` then `Advanced` and then click on `Port Forwarding`
 ![1*rCj_FeuZ5Rm2abz48qhulg](https://user-images.githubusercontent.com/58959408/174720900-39eda7e0-9be8-453c-94f1-4aa1a6b10951.png)
-4. Change the Host Port and Guest Port to `4242`
+4. Change the Host Port to `4243` and Guest Port to `4242`
 ![1*61-KSUCFcerO1wPqBcYISg](https://user-images.githubusercontent.com/58959408/174720987-e8de3bf9-2ffa-40ca-9d5c-4d0dea9d0b30.png)
 5. Then head back to your Virtual Machine
 6. Type `sudo systemctl restart ssh` to restart your SSH Server
@@ -219,7 +219,7 @@ wall "	#Architecture: $arc
 	#Network: IP $ip ($mac)
 	#Sudo: $cmds cmd"
 ```
-2. Then open up a iTerm2 seperate from your Virtual Machine and type in iTerm `ssh your_host_name42@127.0.0.1 -p 4242` and then type your password, when it asks for it. 
+2. Then open up a iTerm2 seperate from your Virtual Machine and type in iTerm `ssh your_host_name42@127.0.0.1 -p 4243` and then type your password, when it asks for it. 
 3. Then type `cd /usr/local/bin`.
 4. Then type `nano monitoring.sh` and paste the text above into the vim monitoring.sh you just created, by doing `command` + `v` on your Apple keyboard.
 5. Save and Exit your `monitoring.sh`
