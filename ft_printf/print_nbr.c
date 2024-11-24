@@ -20,7 +20,7 @@ void	print_nbr(int n, int *counter)
 	if (ln < 0)
 	{
 		ln = -ln;
-		print_char('-', counter);
+		print_char((int) '-', counter);
 	}
 	if (ln >= 10)
 	{
@@ -28,7 +28,7 @@ void	print_nbr(int n, int *counter)
 		ln %= 10;
 	}
 	if (ln < 10)
-		print_char(ln + 48, counter);
+		print_char((int)ln + 48, counter);
 }
 
 void	print_hex(unsigned int ln, int *counter, char x_X)
@@ -41,14 +41,14 @@ void	print_hex(unsigned int ln, int *counter, char x_X)
 		form_x = "0123456789ABCDEF";
 	if (ln >= 16)
 		print_hex(ln / 16, counter, x_X);
-	print_char(form_x[ln % 16], counter);
+	print_char((int) form_x[ln % 16], counter);
 }
 
 void	print_uint(unsigned int ln, int *counter)
 {
 	if (ln >= 10)
 		print_uint(ln / 10, counter);
-	print_char((ln % 10) + 48, counter);
+	print_char((int)(ln % 10) + 48, counter);
 }
 
 void	print_ptr(void *pt, int *counter)

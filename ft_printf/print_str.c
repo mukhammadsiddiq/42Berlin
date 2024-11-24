@@ -12,21 +12,22 @@
 
 #include "ft_printf.h"
 
-void	print_char(char c, int *counter)
+void	print_char(int c, int *counter)
 {
-	if (!c)
-		return ;
 	(*counter)++;
 	write(1, &c, 1);
 }
 
 void	print_str(char *str, int *counter)
 {
-	if (!str)
-		return ;
-	while (*str)
+	if (str == NULL)
 	{
-		print_char(*str, counter);
+		write(1, "(null)", 6);
+		*counter += 6;
+	}
+	while (*str != '\0')
+	{
+		print_char((int) *str, counter);
 		str++;
 	}
 }

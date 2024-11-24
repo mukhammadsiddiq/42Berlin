@@ -12,22 +12,22 @@
 
 #include "ft_printf.h"
 
-void	print_param(char specifier, va_list ptr, int *count)
+void	print_param(char specifier, va_list *ptr, int *count)
 {
 	if (specifier == 'c')
-		print_char(va_arg(ptr, int), count);
+		print_char(va_arg(*ptr, int), count);
 	else if (specifier == 's')
-		print_str(va_arg(ptr, char *), count);
+		print_str(va_arg(*ptr, char *), count);
 	else if (specifier == 'd' || specifier == 'i')
-		print_nbr((long) va_arg(ptr, int), count);
+		print_nbr(va_arg(*ptr, int), count);
 	else if (specifier == 'p')
-		print_ptr((void *) va_arg(ptr, unsigned long), count);
+		print_ptr((void *) va_arg(*ptr, unsigned long), count);
 	else if (specifier == 'u')
-		print_uint(va_arg(ptr, unsigned int), count);
+		print_uint(va_arg(*ptr, unsigned int), count);
 	else if (specifier == 'x')
-		print_hex(va_arg(ptr, unsigned int), count, 'x');
+		print_hex(va_arg(*ptr, unsigned int), count, 'x');
 	else if (specifier == 'X')
-		print_hex(va_arg(ptr, unsigned int), count, 'X');
+		print_hex(va_arg(*ptr, unsigned int), count, 'X');
 	else
 		print_char(specifier, count);
 }

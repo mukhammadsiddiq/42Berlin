@@ -19,16 +19,15 @@ int	ft_printf(const char *str, ...)
 
 	counter = 0;
 	va_start(ptr, str);
-	while (*str)
+	while (*str != '\0')
 	{
 		if (*str == '%')
 		{
-			str++;
-			print_param(*str, ptr, &counter);
+			print_param(*(++str), &ptr, &counter);
 		}
 		else
-			print_char(*str, &counter);
-		str++;
+			print_char((int)*str, &counter);
+		++str;
 	}
 	va_end(ptr);
 	return (counter);
@@ -41,7 +40,7 @@ int	ft_printf(const char *str, ...)
 // 	char	*s;
 
 // 	ft_printf("-----> Checking for Char <------------\n");
-// 	c = 'A';
+// 	c = '1';
 // 	count = ft_printf("Here is a character F: %c\n", c);
 // 	ft_printf("size of the str F: %d\n", count);
 // 	count = 0;
@@ -79,9 +78,18 @@ int	ft_printf(const char *str, ...)
 // 	ft_printf("ft_printf: cspdiuxX%\n");
 // 	// printf("ft_printf: cspdiuxX%");
 // 	ft_printf("-----> Checking for str<------------\n");
-// }
+// 	// ft_printf("printf: %p %p\n", LONG_MIN, LONG_MAX);
+// 	// printf("printf: %p %p\n", LONG_MIN, LONG_MAX);
+// 	// ft_printf("ft_printf: %s", NULL);
+// 	// printf("printf: %s\n", NULL);
+// // }
 // int	main(void)
 // {
-// 	ft_printf("ft_printf: %c %c %c\n", '0', 0, '1');
-// 	printf("printf: %c %c %c\n", '0', 0, '1');
+// 	ft_printf("ft_printf: %c %c %c\n", 'a', '\t', 'b');
+// 	printf("printf: %c %c %c\n", 'a', '\t', 'b');
+// 	ft_printf("-----> Checking for str<------------\n");
+// 	ft_printf("ft?printf: %s %s\n", "", "-");
+// 	printf("printf: %s %s\n", "", "-");
+// 	ft_printf("ft_printf:%x %d\n", -1, -2147483647);
+// 	printf("printf:%x %d\n", -1, -2147483647);
 // }

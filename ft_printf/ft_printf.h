@@ -18,13 +18,13 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-void	print_char(char c, int *counter);
+void	print_char(int c, int *counter);
 void	print_str(char *str, int *counter);
 void	print_nbr(int n, int *counter);
 void	print_hex(unsigned int ln, int *counter, char x_X);
 void	print_uint(unsigned int ln, int *counter);
 void	print_ptr(void *pt, int *counter);
 int		ft_printf(const char *str, ...);
-void	print_param(char specifier, va_list ptr, int *counter);
+void	print_param(char specifier, va_list *ptr, int *counter);
 
 #endif
