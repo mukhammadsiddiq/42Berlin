@@ -83,22 +83,22 @@ int	ft_printf(const char *str, ...)
 // 	// ft_printf("ft_printf: %s", NULL);
 // 	// printf("printf: %s\n", NULL);
 // // }
-int	main(void)
-{
-	char *str = NULL;
-	int count;
+// int	main(void)
+// {
+// 	char *str = NULL;
+// 	int count;
 
-	count = 0;
-	ft_printf("ft_printf: %c %c %c\n", 'a', '\t', 'b');
-	printf("printf: %c %c %c\n", 'a', '\t', 'b');
-	ft_printf("-----> Checking for str<------------\n");
-	ft_printf("ft?printf: %s %s\n", "", str);
-	printf("printf: %s %s\n", "", str);
-	ft_printf("ft_printf:%x %d\n", -1, -2147483647);
-	printf("printf:%x %d\n", -1, -2147483647);
-	count = printf("printf:%p\n", "");
-	ft_printf("number: %d\n", count);
-	count = 0;
-	count = ft_printf("printf:%p\n", (void *)"");
-	ft_printf("number: %d\n", count);
-}
+// 	count = 0;
+// 	ft_printf("ft_printf: %c %c %c\n", 'a', '\t', 'b');
+// 	printf("printf: %c %c %c\n", 'a', '\t', 'b');
+// 	ft_printf("-----> Checking for str<------------\n");
+// 	ft_printf("ft?printf: %s %s\n", "", str);
+// 	printf("printf: %s %s\n", "", str);
+// 	ft_printf("ft_printf:%x %d\n", -1, -2147483647);
+// 	printf("printf:%x %d\n", -1, -2147483647);
+// 	count = printf("printf:%p\n", "");
+// 	ft_printf("number: %d\n", count);
+// 	count = 0;
+// 	count = ft_printf("printf:%p\n", (void *)"");
+// 	ft_printf("number: %d\n", count);
+// }
