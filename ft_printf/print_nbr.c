@@ -56,7 +56,7 @@ void	print_ptr(void *pt, int *counter)
 	unsigned long	ptr;
 
 	ptr = (unsigned long) pt;
-	print_str("0x10", counter);
+	print_str("0x", counter);
 	if (pt == 0)
 	{
 		print_char('0', counter);

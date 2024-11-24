@@ -32,3 +32,9 @@ void	print_str(char *str, int *counter)
 		str++;
 	}
 }
+
+// int main(void)
+// {
+// 	int counter = 0;
+// 	print_str("0x", &counter);
+// }
