@@ -66,7 +66,7 @@ int	ft_printf(const char *str, ...)
 // 	ft_printf("-----> Checking for Hex finish<------------\n");
 // 	ft_printf("-----> Checking for Hex<------------\n");
 // 	ft_printf("ft_printf: %X\n", -1);
-// 	printf("printf: %X\n", -1);
+// 	printf("printf: %X\n", -1); 
 // 	ft_printf("-----> Checking for Hex finish<------------\n");
 // 	ft_printf("-----> Checking for Unsigned <------------\n");
 // 	ft_printf("ft_printf: %u\n", 5434);
@@ -86,6 +86,9 @@ int	ft_printf(const char *str, ...)
 int	main(void)
 {
 	char *str = NULL;
+	int count;
+
+	count = 0;
 	ft_printf("ft_printf: %c %c %c\n", 'a', '\t', 'b');
 	printf("printf: %c %c %c\n", 'a', '\t', 'b');
 	ft_printf("-----> Checking for str<------------\n");
@@ -93,4 +96,9 @@ int	main(void)
 	printf("printf: %s %s\n", "", str);
 	ft_printf("ft_printf:%x %d\n", -1, -2147483647);
 	printf("printf:%x %d\n", -1, -2147483647);
+	count = printf("printf:%p\n", "");
+	ft_printf("number: %d\n", count);
+	count = 0;
+	count = ft_printf("printf:%p\n", (void *)"");
+	ft_printf("number: %d\n", count);
 }
