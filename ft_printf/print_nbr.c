@@ -53,16 +53,24 @@ void	print_uint(unsigned int ln, int *counter)
 
 void	print_ptr(void *pt, int *counter)
 {
-	unsigned long	ptr;
+	size_t			ptr;
+	char			c[24];
+	char			*base;
+	int				i;
 
-	ptr = (unsigned long) pt;
+	i = 0;
+	base = "0123456789abcdef";
+	ptr = (size_t) pt;
 	print_str("0x", counter);
-	if (pt == 0)
-	{
+	if (ptr == 0)
 		print_char('0', counter);
-		return ;
+	while (ptr)
+	{
+		c[i++] = base[ptr % 16];
+		ptr /= 16;
 	}
-	print_hex(ptr, counter, 'x');
+	while (i-- > 0)
+		print_char(c[i], counter);
 }
 
 // int main(void)

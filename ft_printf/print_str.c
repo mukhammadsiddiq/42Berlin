@@ -33,8 +33,18 @@ void	print_str(char *str, int *counter)
 	}
 }
 
+int	length(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
 // int main(void)
 // {
-// 	int counter = 0;
-// 	print_str("0x", &counter);
+// 	int counter -= 
+// 	print_char('0', &counter);
 // }

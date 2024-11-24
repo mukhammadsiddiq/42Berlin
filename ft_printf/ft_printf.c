@@ -99,6 +99,6 @@ int	main(void)
 	count = printf("printf:%p\n", "");
 	ft_printf("number: %d\n", count);
 	count = 0;
-	count = ft_printf("printf:%p\n", (void *)"");
+	count = ft_printf("printf:%p\n", "");
 	ft_printf("number: %d\n", count);
 }
