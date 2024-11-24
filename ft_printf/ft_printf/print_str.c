@@ -14,15 +14,19 @@
 
 void	print_char(int c, int *counter)
 {
+	if (c == '\0')
+		return ;
 	(*counter)++;
 	write(1, &c, 1);
 }
 
 void	print_str(char *str, int *counter)
 {
-	if (!str)
+	if (str == NULL)
+		print_str("(null)", counter);
+	if (*str == '\0')
 		return ;
-	while (*str)
+	while (*str != '\0')
 	{
 		print_char((int) *str, counter);
 		str++;

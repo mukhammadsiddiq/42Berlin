@@ -19,7 +19,7 @@ void	print_param(char specifier, va_list ptr, int *count)
 	else if (specifier == 's')
 		print_str(va_arg(ptr, char *), count);
 	else if (specifier == 'd' || specifier == 'i')
-		print_nbr((long) va_arg(ptr, int), count);
+		print_nbr(va_arg(ptr, int), count);
 	else if (specifier == 'p')
 		print_ptr((void *) va_arg(ptr, unsigned long), count);
 	else if (specifier == 'u')
