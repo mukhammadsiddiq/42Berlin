@@ -20,10 +20,11 @@ void	print_char(int c, int *counter)
 
 void	print_str(char *str, int *counter)
 {
-	if (str == NULL)
+	if (!str)
 	{
 		write(1, "(null)", 6);
 		*counter += 6;
+		return ;
 	}
 	while (*str != '\0')
 	{

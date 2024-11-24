@@ -83,13 +83,14 @@ int	ft_printf(const char *str, ...)
 // 	// ft_printf("ft_printf: %s", NULL);
 // 	// printf("printf: %s\n", NULL);
 // // }
-// int	main(void)
-// {
-// 	ft_printf("ft_printf: %c %c %c\n", 'a', '\t', 'b');
-// 	printf("printf: %c %c %c\n", 'a', '\t', 'b');
-// 	ft_printf("-----> Checking for str<------------\n");
-// 	ft_printf("ft?printf: %s %s\n", "", "-");
-// 	printf("printf: %s %s\n", "", "-");
-// 	ft_printf("ft_printf:%x %d\n", -1, -2147483647);
-// 	printf("printf:%x %d\n", -1, -2147483647);
-// }
+int	main(void)
+{
+	char *str = NULL;
+	ft_printf("ft_printf: %c %c %c\n", 'a', '\t', 'b');
+	printf("printf: %c %c %c\n", 'a', '\t', 'b');
+	ft_printf("-----> Checking for str<------------\n");
+	ft_printf("ft?printf: %s %s\n", "", str);
+	printf("printf: %s %s\n", "", str);
+	ft_printf("ft_printf:%x %d\n", -1, -2147483647);
+	printf("printf:%x %d\n", -1, -2147483647);
+}

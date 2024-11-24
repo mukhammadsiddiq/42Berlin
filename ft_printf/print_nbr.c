@@ -57,6 +57,11 @@ void	print_ptr(void *pt, int *counter)
 
 	ptr = (unsigned long) pt;
 	print_str("0x", counter);
+	if (pt == 0)
+	{
+		print_char('0', counter);
+		return ;
+	}
 	print_hex(ptr, counter, 'x');
 }
 
