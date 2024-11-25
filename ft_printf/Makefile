@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: muxammad <muxammad@student.42.fr>          +#+  +:+       +#+         #
+#    By: muhammadqodirmaxmudov <muhammadqodirmax    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/23 23:42:43 by muxammad          #+#    #+#              #
-#    Updated: 2024/11/23 23:46:17 by muxammad         ###   ########.fr        #
+#    Updated: 2024/11/26 00:45:19 by muhammadqod      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ RANLIB = ranlib
 NAME = libftprintf.a
 
 # files
-SRC = ft_printf.c print_nbr.c print_param.c print_str.c
+SRC = ft_printf.c print_nbr.c print_str.c
 
 # Object files
 OBJ = $(SRC:.c=.o)

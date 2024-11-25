@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muxammad <muxammad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: muhammadqodirmaxmudov <muhammadqodirmax    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 16:00:42 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/24 00:18:33 by muxammad         ###   ########.fr       */
+/*   Updated: 2024/11/26 00:46:35 by muhammadqod      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-void	print_char(int c, int *counter);
+void	print_char(char c, int *counter);
 void	print_str(char *str, int *counter);
 void	print_nbr(int n, int *counter);
 void	print_hex(unsigned int ln, int *counter, char x_X);

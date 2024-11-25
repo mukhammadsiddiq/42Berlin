@@ -6,7 +6,7 @@
 /*   By: muhammadqodirmaxmudov <muhammadqodirmax    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 16:00:48 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/26 00:40:23 by muhammadqod      ###   ########.fr       */
+/*   Updated: 2024/11/26 00:46:49 by muhammadqod      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	print_param(char specifier, va_list *ptr, int *count)
 	else if (specifier == 'X')
 		print_hex(va_arg(*ptr, unsigned int), count, 'X');
 	else if (specifier == '%')
-		print_char((int) '%', count);
+		print_char('%', count);
 	else
 		print_char(specifier, count);
 }
@@ -50,7 +50,7 @@ int	ft_printf(const char *str, ...)
 			print_param(*(++str), &ptr, &counter);
 		}
 		else
-			print_char((int)*str, &counter);
+			print_char(*str, &counter);
 		++str;
 	}
 	va_end(ptr);

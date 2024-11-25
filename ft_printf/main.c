@@ -6,7 +6,7 @@
 /*   By: muhammadqodirmaxmudov <muhammadqodirmax    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 00:35:58 by muhammadqod       #+#    #+#             */
-/*   Updated: 2024/11/26 00:36:16 by muhammadqod      ###   ########.fr       */
+/*   Updated: 2024/11/26 00:50:10 by muhammadqod      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

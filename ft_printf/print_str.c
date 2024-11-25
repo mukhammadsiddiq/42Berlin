@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   print_str.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muxammad <muxammad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: muhammadqodirmaxmudov <muhammadqodirmax    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 17:19:20 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/24 00:12:16 by muxammad         ###   ########.fr       */
+/*   Updated: 2024/11/26 00:51:25 by muhammadqod      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	print_char(int c, int *counter)
+void	print_char(char c, int *counter)
 {
 	(*counter)++;
 	write(1, &c, 1);
@@ -28,7 +28,7 @@ void	print_str(char *str, int *counter)
 	}
 	while (*str != '\0')
 	{
-		print_char((int) *str, counter);
+		print_char(*str, counter);
 		str++;
 	}
 }
@@ -42,9 +42,3 @@ int	length(char *s)
 		i++;
 	return (i);
 }
-
-// int main(void)
-// {
-// 	int counter -= 
-// 	print_char('0', &counter);
-// }
