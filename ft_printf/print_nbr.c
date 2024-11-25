@@ -51,10 +51,10 @@ void	print_uint(unsigned int ln, int *counter)
 	print_char((int)(ln % 10) + 48, counter);
 }
 
-void	print_ptr(void *pt, int *counter)
+void	print_ptr(size_t pt, int *counter)
 {
 	size_t			ptr;
-	char			c[24];
+	char			c[25];
 	char			*base;
 	int				i;
 
@@ -64,12 +64,13 @@ void	print_ptr(void *pt, int *counter)
 	print_str("0x", counter);
 	if (ptr == 0)
 		print_char('0', counter);
-	while (ptr)
+	while (ptr != 0)
 	{
-		c[i++] = base[ptr % 16];
+		c[i] = base[ptr % 16];
 		ptr /= 16;
+		i++;
 	}
-	while (i-- > 0)
+	while (i--)
 		print_char(c[i], counter);
 }
 

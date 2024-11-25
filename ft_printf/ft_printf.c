@@ -3,14 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muxammad <muxammad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: muhammadqodirmaxmudov <muhammadqodirmax    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 16:00:48 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/24 00:19:33 by muxammad         ###   ########.fr       */
+/*   Updated: 2024/11/26 00:40:23 by muhammadqod      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void	print_param(char specifier, va_list *ptr, int *count)
+{
+	if (specifier == 'c')
+		print_char(va_arg(*ptr, int), count);
+	else if (specifier == 's')
+		print_str(va_arg(*ptr, char *), count);
+	else if (specifier == 'd' || specifier == 'i')
+		print_nbr(va_arg(*ptr, int), count);
+	else if (specifier == 'p')
+		print_ptr(va_arg(*ptr, size_t), count);
+	else if (specifier == 'u')
+		print_uint(va_arg(*ptr, unsigned int), count);
+	else if (specifier == 'x')
+		print_hex(va_arg(*ptr, unsigned int), count, 'x');
+	else if (specifier == 'X')
+		print_hex(va_arg(*ptr, unsigned int), count, 'X');
+	else if (specifier == '%')
+		print_char((int) '%', count);
+	else
+		print_char(specifier, count);
+}
 
 int	ft_printf(const char *str, ...)
 {
@@ -19,6 +41,8 @@ int	ft_printf(const char *str, ...)
 
 	counter = 0;
 	va_start(ptr, str);
+	if (!str)
+		return (-1);
 	while (*str != '\0')
 	{
 		if (*str == '%')
@@ -31,74 +55,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(ptr);
 	return (counter);
-}
-
-// int	main(void)
-// {
-// 	int		count;
-// 	char	c;
-// 	char	*s;
-
-// 	ft_printf("-----> Checking for Char <------------\n");
-// 	c = '1';
-// 	count = ft_printf("Here is a character F: %c\n", c);
-// 	ft_printf("size of the str F: %d\n", count);
-// 	count = 0;
-// 	count = printf("Here is a character O: %c\n", c);
-// 	printf("size of the str O: %i\n", count);
-// 	ft_printf("-----> Checking for Char End <------------\n");
-// 	ft_printf("-----> Checking for Str <------------\n");
-// 	count = 0;
-// 	s = "Mukhammad siddiq";
-// 	count = ft_printf("size of the str F: %s\n", s);
-// 	count = 0;
-// 	count = printf("size of the str O: %s\n", s);
-// 	ft_printf("-----> Checking for Str end<------------\n");
-// 	ft_printf("-----> Checking for Digit <------------\n");
-// 	ft_printf("ft_printf: %i\n", -2147483650);
-// 	ft_printf("ft_printf: %d\n", -2147483650);
-// 	printf("printf: %d\n", -2147483647);
-// 	printf("printf: %i\n", -2147483647);
-// 	ft_printf("-----> Checking for Digit end<------------\n");
-// 	ft_printf("-----> Checking for Hex<------------\n");
-// 	ft_printf("ft_printf: %x\n", 544);
-// 	printf("printf: %x\n", 544);
-// 	ft_printf("-----> Checking for Hex finish<------------\n");
-// 	ft_printf("-----> Checking for Hex<------------\n");
-// 	ft_printf("ft_printf: %X\n", -1);
-// 	printf("printf: %X\n", -1); 
-// 	ft_printf("-----> Checking for Hex finish<------------\n");
-// 	ft_printf("-----> Checking for Unsigned <------------\n");
-// 	ft_printf("ft_printf: %u\n", 5434);
-// 	ft_printf("ft_printf: %u\n", -5434);
-// 	printf("printf: %u\n", 5434);
-// 	printf("printf: %u\n", -5434);
-// 	ft_printf("-----> Checking for unsigned end<------------\n");
-// 	ft_printf("-----> Checking for str<------------\n");
-// 	ft_printf("ft_printf: cspdiuxX%\n");
-// 	// printf("ft_printf: cspdiuxX%");
-// 	ft_printf("-----> Checking for str<------------\n");
-// 	// ft_printf("printf: %p %p\n", LONG_MIN, LONG_MAX);
-// 	// printf("printf: %p %p\n", LONG_MIN, LONG_MAX);
-// 	// ft_printf("ft_printf: %s", NULL);
-// 	// printf("printf: %s\n", NULL);
-// // }
-int	main(void)
-{
-	char *str = NULL;
-	int count;
-
-	count = 0;
-	ft_printf("ft_printf: %c %c %c\n", 'a', '\t', 'b');
-	printf("printf: %c %c %c\n", 'a', '\t', 'b');
-	ft_printf("-----> Checking for str<------------\n");
-	ft_printf("ft?printf: %s %s\n", "", str);
-	printf("printf: %s %s\n", "", str);
-	ft_printf("ft_printf:%x %d\n", -1, -2147483647);
-	printf("printf:%x %d\n", -1, -2147483647);
-	count = printf("printf:%p\n", "");
-	ft_printf("number: %d\n", count);
-	count = 0;
-	count = ft_printf("printf:%p\n", "");
-	ft_printf("number: %d\n", count);
 }
