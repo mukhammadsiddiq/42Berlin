@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_nbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhammadqodirmaxmudov <muhammadqodirmax    +#+  +:+       +#+        */
+/*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 16:18:08 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/26 00:52:02 by muhammadqod      ###   ########.fr       */
+/*   Updated: 2024/11/26 13:28:46 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,21 +53,19 @@ void	print_uint(unsigned int ln, int *counter)
 
 void	print_ptr(size_t pt, int *counter)
 {
-	size_t			ptr;
 	char			c[25];
 	char			*base;
 	int				i;
 
 	i = 0;
 	base = "0123456789abcdef";
-	ptr = (size_t) pt;
 	print_str("0x", counter);
-	if (ptr == 0)
+	if (pt == 0)
 		print_char('0', counter);
-	while (ptr != 0)
+	while (pt != 0)
 	{
-		c[i] = base[ptr % 16];
-		ptr /= 16;
+		c[i] = base[pt % 16];
+		pt /= 16;
 		i++;
 	}
 	while (i--)

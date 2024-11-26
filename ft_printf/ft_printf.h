@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhammadqodirmaxmudov <muhammadqodirmax    +#+  +:+       +#+        */
+/*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 16:00:42 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/26 00:46:35 by muhammadqod      ###   ########.fr       */
+/*   Updated: 2024/11/26 13:33:09 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	print_hex(unsigned int ln, int *counter, char x_X);
 void	print_uint(unsigned int ln, int *counter);
 void	print_ptr(size_t pt, int *counter);
 int		ft_printf(const char *str, ...);
-int     length(char *s);
+int		length(char *s);
 void	print_param(char specifier, va_list *ptr, int *counter);
 
 #endif

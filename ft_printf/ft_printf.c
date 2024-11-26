@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhammadqodirmaxmudov <muhammadqodirmax    +#+  +:+       +#+        */
+/*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 16:00:48 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/26 00:46:49 by muhammadqod      ###   ########.fr       */
+/*   Updated: 2024/11/26 13:33:29 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
