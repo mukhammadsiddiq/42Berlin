@@ -6,13 +6,13 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 16:00:48 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/26 13:33:29 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/27 12:50:50 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	print_param(char specifier, va_list *ptr, int *count)
+void	print_param(char specifier, va_list *ptr, int *count, int *i)
 {
 	if (specifier == 'c')
 		print_char(va_arg(*ptr, int), count);
@@ -31,27 +31,28 @@ void	print_param(char specifier, va_list *ptr, int *count)
 	else if (specifier == '%')
 		print_char('%', count);
 	else
-		print_char(specifier, count);
+		(*i)--;
 }
 
 int	ft_printf(const char *str, ...)
 {
 	va_list	ptr;
 	int		counter;
+	int		i;
 
 	counter = 0;
+	i = 0;
 	va_start(ptr, str);
-	if (!str)
-		return (-1);
-	while (*str != '\0')
+	while (str[i] != '\0')
 	{
-		if (*str == '%')
+		if (str[i] == '%')
 		{
-			print_param(*(++str), &ptr, &counter);
+			i++;
+			print_param(str[i], &ptr, &counter, &i);
 		}
 		else
-			print_char(*str, &counter);
-		++str;
+			print_char(str[i], &counter);
+		i++;
 	}
 	va_end(ptr);
 	return (counter);

@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 16:18:08 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/26 13:28:46 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/27 12:34:42 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,13 @@ void	print_ptr(size_t pt, int *counter)
 
 	i = 0;
 	base = "0123456789abcdef";
+	if (!pt)
+	{
+		write(1, "(nil)", 5);
+		*counter += 5;
+		return ;
+	}
 	print_str("0x", counter);
-	if (pt == 0)
-		print_char('0', counter);
 	while (pt != 0)
 	{
 		c[i] = base[pt % 16];

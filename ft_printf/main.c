@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhammadqodirmaxmudov <muhammadqodirmax    +#+  +:+       +#+        */
+/*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 00:35:58 by muhammadqod       #+#    #+#             */
-/*   Updated: 2024/11/26 00:50:10 by muhammadqod      ###   ########.fr       */
+/*   Updated: 2024/11/27 12:51:51 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int main(void)
 //  	  NO SPECIFIERS		   //
 /////////////////////////////////
 	ft_printf("----------------NO SPECIFIERS---------------\n");
+	ft_printf("OUTPUT FT = cspdiuxX%\n");
+	// printf("OUTPUT OG = cspdiuxX%\n");
 	output_OG = printf("OG -> Test String \t TEeeEEEeEEsT String\n");
 	output_FT = ft_printf("FT -> Test String \t TEeeEEEeEEsT String\n");
 	printf("OUTPUT OG = %d\n", output_OG);
@@ -90,7 +92,7 @@ int main(void)
 	ft_printf("OUTPUT FT = %d\n", output_FT);
 
 	ft_printf("\n");
-	
+
 /////////////////////////////////
 //				%s			   //
 /////////////////////////////////
@@ -157,14 +159,14 @@ int main(void)
 //				%p			   //
 /////////////////////////////////
 	ft_printf("------------%%p------------\n");
-	char	*ptr = "c";
+	char	*ptr = 0;
 	output_OG = printf("OG -> %p\n", ptr);
 	output_FT = ft_printf("FT -> %p\n", ptr);
 	printf("OUTPUT OG = %d\n", output_OG);
 	ft_printf("OUTPUT FT = %d\n", output_FT);
 
 	ft_printf("\n");
-	
+
 	void *dummy_ptr = NULL;
 	output_OG = printf("OG -> %p\n", dummy_ptr);
 	output_FT = ft_printf("FT -> %p\n", dummy_ptr);
@@ -179,14 +181,14 @@ int main(void)
 	ft_printf("OUTPUT FT = %d\n", output_FT);
 
 	ft_printf("\n");
-	
+
 	output_OG = printf("OG -> %p\n", (void *)-1);
 	output_FT = ft_printf("FT -> %p\n", (void *)-1);
 	printf("OUTPUT OG = %d\n", output_OG);
 	ft_printf("OUTPUT FT = %d\n", output_FT);
 
 	ft_printf("\n");
-	
+
 	output_OG = printf("OG -> %p\n", (void *)1);
 	output_FT = ft_printf("FT -> %p\n", (void *)1);
 	printf("OUTPUT OG = %d\n", output_OG);
@@ -258,7 +260,7 @@ int main(void)
 	ft_printf("OUTPUT FT = %d\n", output_FT);
 
 	ft_printf("\n");
-	
+
 	ft_printf("INT_MAX-------------------\n");
 	output_OG = printf("OG -> %d\n", INT_MAX);
 	output_FT = ft_printf("FT -> %d\n", INT_MAX);
@@ -290,7 +292,7 @@ int main(void)
 	ft_printf("OUTPUT FT = %d\n", output_FT);
 
 	ft_printf("\n");
-	
+
 	ft_printf("INT_MIN--------------------\n");
 	output_OG = printf("OG -> %d\n", INT_MIN);
 	output_FT = ft_printf("FT -> %d\n", INT_MIN);
@@ -427,7 +429,7 @@ int main(void)
 	ft_printf("OUTPUT FT = %d\n", output_FT);
 
 	ft_printf("\n");
-	
+
 	output_OG = printf("OG -> %x\n", 10);
 	output_FT = ft_printf("FT -> %x\n", 10);
 	printf("OUTPUT OG = %d\n", output_OG);
@@ -469,7 +471,7 @@ int main(void)
 	ft_printf("OUTPUT FT = %d\n", output_FT);
 
 	ft_printf("\n");
-	
+
 	output_OG = printf("OG -> %x\n", 0);
 	output_FT = ft_printf("FT -> %x\n", 0);
 	printf("OUTPUT OG = %d\n", output_OG);
@@ -490,7 +492,7 @@ int main(void)
 	ft_printf("OUTPUT FT = %d\n", output_FT);
 
 	ft_printf("\n");
-	
+
 	output_OG = printf("OG -> %x\n", -1);
 	output_FT = ft_printf("FT -> %x\n", -1);
 	printf("OUTPUT OG = %d\n", output_OG);
@@ -504,7 +506,7 @@ int main(void)
 	ft_printf("OUTPUT FT = %d\n", output_FT);
 
 	ft_printf("\n");
-	
+
 	output_OG = printf("OG -> %x\n", -101);
 	output_FT = ft_printf("FT -> %x\n", -101);
 	printf("OUTPUT OG = %d\n", output_OG);
@@ -628,7 +630,7 @@ int main(void)
 	ft_printf("OUTPUT FT = %d\n", output_FT);
 
 	ft_printf("\n");
-	
+
 	output_OG = printf("OG -> %% %%\n");
 	output_FT = ft_printf("FT -> %% %%\n");
 	printf("OUTPUT OG = %d\n", output_OG);
@@ -655,5 +657,7 @@ int main(void)
 	ft_printf("OUTPUT FT = %d\n", output_FT);
 
 	ft_printf("\n");
+	ft_printf("----------------NO SPECIFIERS---------------\n");
+	ft_printf("OUTPUT FT = cspdiuxX%");
 	return (0);
 }

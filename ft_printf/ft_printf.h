@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 16:00:42 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/26 13:33:09 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/27 12:51:03 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ void	print_uint(unsigned int ln, int *counter);
 void	print_ptr(size_t pt, int *counter);
 int		ft_printf(const char *str, ...);
 int		length(char *s);
-void	print_param(char specifier, va_list *ptr, int *counter);
+void	print_param(char specifier, va_list *ptr, int *counter, int *i);
 
 #endif
