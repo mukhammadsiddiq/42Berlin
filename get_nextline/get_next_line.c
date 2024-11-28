@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: muhammadqodirmaxmudov <muhammadqodirmax    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 15:42:14 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/28 18:15:14 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/28 21:13:19 by muhammadqod      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ char	*read_file(int fd, char *stack)
 		if (!stack)
 			stack = ft_strdup("");
 		tmp = stack;
+		printf("STACK before STRJOIN: \n%s\n", stack);
 		stack = ft_strjoin(tmp, buf);
+		printf("STACK AFTER STRJOIN: \n%s\n", stack);
 		free(tmp);
 		if (!stack)
 			return (free(buf), NULL);
@@ -39,7 +41,7 @@ char	*read_file(int fd, char *stack)
 			break;
 	}
 	free(buf);
-	printf("STACK SIZE: %ld\n", ft_strlen(stack));
+	// printf("STACK SIZE: %ld\n", ft_strlen(stack));
 	return (stack);
 }
 
@@ -50,7 +52,7 @@ int	till_nextline(char *s)
 	i = 0;
 	while (s[i] && s[i] != '\n')
 		i++;
-	printf("TILL_NEXT_LINE: %d\n", i);
+	// printf("TILL_NEXT_LINE: %d\n", i);
 	return (i);
 }
 
@@ -89,15 +91,15 @@ char	*get_next_line(int fd)
 	static char	*stack;
 	char		*line;
 
-	stack = NULL;
 	line = NULL;
-	if (fd <= 0 || BUFFER_SIZE <= 0)
+	if (fd <= 0 || BUFFER_SIZE <= 0 || !fd)
 		return (NULL);
+	printf("STACK before  READFILE: \n%s\n", stack);
 	stack = read_file(fd, stack);
-	printf("STACK DATA AFTER READ FUNCTION: \n%s\n", stack);
+	// printf("STACK DATA AFTER READ FUNCTION: \n%s\n", stack);
 	line = extract_line(stack);
 	printf("LINE DATA: \n%s", line);
 	stack = stack_update(stack);
-	printf("UPDATED STACK : %s\n", stack);
+	// printf("UPDATED STACK : %s\n", stack);
 	return (line);
 }
