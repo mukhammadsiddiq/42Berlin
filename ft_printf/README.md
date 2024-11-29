@@ -52,3 +52,29 @@ void	ft_putchar_pf(char c, size_t *counter)
 	write(1, &c, 1);
 	(*counter)++; // Increment the counter with each character printed
 }
+```
+## 🛠️ Compilation with Makefile
+
+This project includes a `Makefile` to simplify the build process. Below are the available targets and their usage:
+
+### 🎯 Targets
+
+- **`make` or `make all`**  
+  Compiles all source files into object files (`.o`) and creates the static library `libftprintf.a`.
+
+- **`make clean`**  
+  Deletes all object files (`.o`) generated during the compilation process.
+
+- **`make fclean`**  
+  Deletes all object files (`.o`) and the static library `libftprintf.a`.
+
+- **`make re`**  
+  Cleans all files (using `fclean`) and then recompiles everything.
+
+### 🧑‍💻 Usage
+
+To use the `Makefile`, run the following commands in your terminal:
+
+1. Compile the project and create the library:
+   ```bash
+   make
