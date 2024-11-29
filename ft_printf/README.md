@@ -41,7 +41,7 @@ Further details can be found in the [subject of the project](https://github.com/
 The main challenge of this project is managing a variable number of parameters and ensuring that the `ft_printf()` function returns an `int`.
 
 #### `va_list`
-To manage a variable number of parameters, we use the macros `va_list`, `va_start`, `va_arg`, and `va_end`. The `ft_printf()` function calls the `ft_format()` function when it encounters the `%` sign among the parameters, checks the next character in the format string, and calls the appropriate function to handle different variable types. The `<stdarg.h>` library is included in `ft_printf.h` to use these macros.
+To manage a variable number of parameters, we use the macros `va_list`, `va_start`, `va_arg`, and `va_end`. The `ft_printf()` function calls the `print_param()` function when it encounters the `%` sign among the parameters, checks the next character in the format string, and calls the appropriate function to handle different variable types. The `<stdarg.h>` library is included in `ft_printf.h` to use these macros.
 
 #### Returning an integer
 To return the integer from `ft_printf()`, a pointer is passed to the format printing functions. This pointer tracks the number of characters printed before continuing with the string provided. Example:
