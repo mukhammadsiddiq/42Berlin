@@ -1,7 +1,7 @@
 # Born 2 Be Root
 
 
-<img src="https://github.com/mukhammadsiddiq/42Berlin-Guideline/blob/main/Born2beroot/img/Born_2_Be_Root_Image.png" alt="Born 2 Be Root" width="400"/>
+<img src="https://github.com/mukhammadsiddiq/42Berlin-Guideline/blob/main/Born2beroot/img/Born_2_Be_Root_Image.png" alt="Born 2 Be Root" width="400" text_align=center/>
 
 
 Welcome to the **Born 2 Be Root** project! This repository is dedicated to creating a fully secure virtual machine environment, combining cutting-edge technologies and robust security practices.
