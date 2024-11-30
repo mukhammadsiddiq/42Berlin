@@ -1,8 +1,5 @@
 # Born 2 Be Root
 
-
-# Born 2 Be Root
-
 <div align="center">
   <img src="https://github.com/mukhammadsiddiq/42Berlin-Guideline/blob/main/Born2beroot/img/Born_2_Be_Root_Image.png" alt="Born 2 Be Root" width="600"/>
 </div>
