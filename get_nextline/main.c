@@ -6,7 +6,7 @@
 /*   By: muhammadqodirmaxmudov <muhammadqodirmax    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 14:51:00 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/30 15:18:03 by muhammadqod      ###   ########.fr       */
+/*   Updated: 2024/11/30 16:14:48 by muhammadqod      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main()
     char *str;
 
     // Open the file with read-only mode
-    fd = open("text.txt", O_RDONLY);
+    fd = open("read.txt", O_RDONLY);
     if (fd == -1)
     {
         perror("Error opening file");
