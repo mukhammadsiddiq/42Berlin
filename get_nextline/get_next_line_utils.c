@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: muhammadqodirmaxmudov <muhammadqodirmax    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 15:42:58 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/28 15:28:12 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/28 21:29:03 by muhammadqod      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

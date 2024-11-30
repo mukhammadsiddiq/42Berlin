@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
+/*   By: muhammadqodirmaxmudov <muhammadqodirmax    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 14:51:00 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/28 18:11:25 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/11/30 15:18:03 by muhammadqod      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,32 @@
 
 int main()
 {
-	int		fd;
-	char	*str;
+    int fd;
+    char *str;
 
-	fd = open("text.txt", O_RDONLY);
-	printf("FD: %d\n", fd);
-	str = get_next_line(fd);
-	// printf("main: %s", str);
-	while (str)
-	{
-		printf("%s", str);
-		str = get_next_line(fd);
-	}
+    // Open the file with read-only mode
+    fd = open("text.txt", O_RDONLY);
+    if (fd == -1)
+    {
+        perror("Error opening file");
+        return 1;  // Return error code 1 if file can't be opened
+    }
+    // str = get_next_line(fd);
+    // printf("%s", str); // Print the line
+
+    // Read lines one by one using get_next_line
+
+    int i = 1;
+    while ((str = get_next_line(fd)))
+    {
+        printf("%d: %s", i, str); // Print the line
+        free(str);
+        i++;
+        // printf("/////////////// NEW LOOP ////////////////////\n");
+    }
+
+    // Close the file descriptor
+    close(fd);
+
+    return 0;  // Successfully finished
 }
