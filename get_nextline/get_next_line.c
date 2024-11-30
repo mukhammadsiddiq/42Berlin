@@ -6,7 +6,7 @@
 /*   By: muhammadqodirmaxmudov <muhammadqodirmax    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 15:42:14 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/30 16:06:58 by muhammadqod      ###   ########.fr       */
+/*   Updated: 2024/11/30 19:02:10 by muhammadqod      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*read_file(int fd, char *stack)
 
 	buf = (char *) malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buf)
-		return (NULL);
+		return ((free(stack)), NULL);
 	bytesread = 1;
 	while (bytesread > 0)
 	{
@@ -32,13 +32,15 @@ char	*read_file(int fd, char *stack)
 		buf[bytesread] = '\0';
 		if (!stack)
 			stack = ft_strdup("");
+		if (!stack)
+			return (free(buf), NULL);
 		tmp = stack;
 		stack = ft_strjoin(tmp, buf);
 		free(tmp);
 		if (!stack)
 			return (free(buf), NULL);
 		if (ft_strchr(buf, '\n'))
-			break;
+			break ;
 	}
 	free(buf);
 	return (stack);
@@ -65,6 +67,8 @@ char	*extract_line(char *stack)
 		return (NULL);
 	len = till_nextline(stack);
 	str = ft_substr(stack, 0, len + 1);
+	if (!str)
+		return (NULL);
 	return (str);
 }
 
@@ -81,6 +85,8 @@ char	*stack_update(char *stack)
 	if (stack[len] == '\n')
 		len += 1;
 	new_stack = ft_substr(stack, len, stack_len - len + 1);
+	if (!new_stack)
+		return (free(stack), NULL);
 	free(stack);
 	return (new_stack);
 }
@@ -91,12 +97,14 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	line = NULL;
-	if (BUFFER_SIZE < 0 || fd < 0)
+	if (BUFFER_SIZE <= 0 || fd < 0)
 		return (NULL);
 	stack = read_file(fd, stack);
 	if (!stack)
 		return (NULL);
 	line = extract_line(stack);
+	if (!line)
+		return (free(stack), NULL);
 	stack = stack_update(stack);
 	return (line);
 }
