@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muhammadqodirmaxmudov <muhammadqodirmax    +#+  +:+       +#+        */
+/*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 15:42:14 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/11/30 19:02:10 by muhammadqod      ###   ########.fr       */
+/*   Updated: 2024/12/02 16:46:04 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,30 +20,25 @@ char	*read_file(int fd, char *stack)
 
 	buf = (char *) malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buf)
-		return ((free(stack)), NULL);
+		return (free(stack), stack = NULL, NULL);
 	bytesread = 1;
 	while (bytesread > 0)
 	{
 		bytesread = read(fd, buf, BUFFER_SIZE);
 		if (bytesread < 0)
-			return (free(buf), NULL);
+			return (free(buf), free(stack), stack = NULL, NULL);
 		if (bytesread == 0)
 			break ;
 		buf[bytesread] = '\0';
 		if (!stack)
 			stack = ft_strdup("");
-		if (!stack)
-			return (free(buf), NULL);
 		tmp = stack;
 		stack = ft_strjoin(tmp, buf);
 		free(tmp);
-		if (!stack)
-			return (free(buf), NULL);
 		if (ft_strchr(buf, '\n'))
 			break ;
 	}
-	free(buf);
-	return (stack);
+	return (free(buf), stack);
 }
 
 int	till_nextline(char *s)
@@ -66,7 +61,9 @@ char	*extract_line(char *stack)
 	if (!stack || stack[0] == '\0')
 		return (NULL);
 	len = till_nextline(stack);
-	str = ft_substr(stack, 0, len + 1);
+	if (stack[len] == '\n')
+		len += 1;
+	str = ft_substr(stack, 0, len);
 	if (!str)
 		return (NULL);
 	return (str);
@@ -80,13 +77,13 @@ char	*stack_update(char *stack)
 
 	len = till_nextline(stack);
 	if (!stack[len])
-		return (free(stack), NULL);
+		return (free(stack), stack = NULL, NULL);
 	stack_len = ft_strlen(stack);
 	if (stack[len] == '\n')
 		len += 1;
-	new_stack = ft_substr(stack, len, stack_len - len + 1);
+	new_stack = ft_substr(stack, len, stack_len - len);
 	if (!new_stack)
-		return (free(stack), NULL);
+		return (free(stack), stack = NULL, NULL);
 	free(stack);
 	return (new_stack);
 }
@@ -104,7 +101,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = extract_line(stack);
 	if (!line)
-		return (free(stack), NULL);
+		return (free(stack), stack = NULL, NULL);
 	stack = stack_update(stack);
 	return (line);
 }
