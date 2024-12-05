@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 19:18:39 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/12/04 19:50:14 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:16:58 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,11 @@
 # include <stdio.h>
 # include <signal.h>
 # include <unistd.h>
+
+typedef struct s_msg
+{
+	unsigned char	c;
+	int	nobits;
+}	t_msg;
 
 #endif

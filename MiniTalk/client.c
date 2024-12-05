@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 15:03:15 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/12/04 19:58:14 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/12/05 19:19:03 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,5 @@ int	main(int argc, char **argv)
 	while (*msg)
 		send_bytes(*(msg++));
 	send_bytes('\0');
-	printf("%d\n", pid);
 	return (0);
 }
