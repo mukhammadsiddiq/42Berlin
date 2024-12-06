@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 15:02:17 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/12/05 19:25:07 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/12/06 19:01:17 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@ t_msg	alpha = {0, 0};
 
 void	convert_bits(int bits)
 {
-	alpha.c = (bits >> alpha.nobits) & 1;
+	if (bits == SIGUSR1)
+		alpha.c |= (1 << (7 - alpha.nobits));
+	else if (bits == SIGUSR2)
+		alpha.c |= (0 << (7 - alpha.nobits));
 	alpha.nobits++;
-	if (alpha.nobits == 7)
+	if (alpha.nobits == 8)
 	{
 		printf("%c", alpha.c);
 		if (!alpha.c)
@@ -31,21 +34,9 @@ void	convert_bits(int bits)
 int	main(void)
 {
 	printf("Here is my PID: %d\n", getpid());
-	char *s = "01100001";
-	int i = 0;
-	while (i < 8)
-	{
-		convert_bits((int)s[i]);
-		i++;
-	}
-	// struct sigaction sa;
-	// sa.sa_handler = &convert_bits;
-	// while (1)
-	// {
-	// 	sigaction(SIGUSR2, &sa, NULL);
-	// 	sigaction(SIGUSR1, &sa, NULL);
-	// 	pause();
-	// }
+	signal(SIGUSR1, convert_bits);
+	signal(SIGUSR2, convert_bits);
+	while (1)
+		pause();
 	return (0);
-
 }
