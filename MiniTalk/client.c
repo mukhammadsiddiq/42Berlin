@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 15:03:15 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/12/07 12:25:49 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/12/07 12:43:53 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,21 @@ void	send_bit(unsigned char bytes, int pid)
 	while (i >= 0)
 	{
 		if ((bytes >> i) & 1)
-			kill(pid, SIGUSR1);
+		{
+			if ((kill(pid, SIGUSR1) == -1))
+			{
+				ft_printf("Invalid PID number!\n");
+				exit(1);
+			}
+		}
 		else
-			kill(pid, SIGUSR2);
+		{
+			if ((kill(pid, SIGUSR2) == -1))
+			{
+				ft_printf("Invalid PID number!\n");
+				exit(1);
+			}
+		}
 		usleep(100);
 		i--;
 	}
