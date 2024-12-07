@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 15:02:17 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/12/06 19:01:17 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/12/07 12:26:26 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ void	convert_bits(int bits)
 	if (bits == SIGUSR1)
 		alpha.c |= (1 << (7 - alpha.nobits));
 	else if (bits == SIGUSR2)
-		alpha.c |= (0 << (7 - alpha.nobits));
+		alpha.c |= (0 >> (7 - alpha.nobits));
 	alpha.nobits++;
 	if (alpha.nobits == 8)
 	{
-		printf("%c", alpha.c);
+		ft_printf("%c", alpha.c);
 		if (!alpha.c)
-			printf("\n");
+			ft_printf("\n");
 		alpha.c = 0;
 		alpha.nobits = 0;
 	}
@@ -33,7 +33,8 @@ void	convert_bits(int bits)
 
 int	main(void)
 {
-	printf("Here is my PID: %d\n", getpid());
+	ft_printf("Feel free to use free version:)\n");
+	ft_printf("Here is my PID: %d\n", getpid());
 	signal(SIGUSR1, convert_bits);
 	signal(SIGUSR2, convert_bits);
 	while (1)

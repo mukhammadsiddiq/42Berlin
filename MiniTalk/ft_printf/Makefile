@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: muhammadqodirmaxmudov <muhammadqodirmax    +#+  +:+       +#+         #
+#    By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/23 23:42:43 by muxammad          #+#    #+#              #
-#    Updated: 2024/11/26 00:45:19 by muhammadqod      ###   ########.fr        #
+#    Updated: 2024/12/07 12:15:40 by mukibrok         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ RANLIB = ranlib
 NAME = libftprintf.a
 
 # files
-SRC = ft_printf.c print_nbr.c print_str.c
+SRC = ft_printf.c print_nbr.c print_str.c ft_atoi.c
 
 # Object files
 OBJ = $(SRC:.c=.o)
@@ -31,19 +31,20 @@ all: $(NAME)
 
 # Rule to compile .c files to .o files
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 # Target for creating the static library (libftprintf.a)
 $(NAME): $(OBJ)
-	$(AR) $(NAME) $(OBJ)
-	$(RANLIB) $(NAME)
+	@$(AR) $(NAME) $(OBJ)
+	@$(RANLIB) $(NAME)
 
 clean:
-	$(RM) $(OBJ)
+	@$(RM) $(OBJ)
 
 # Clean everything (object files and library)
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
+
 
 # Rebuild everything (fclean + all)
 re: fclean all

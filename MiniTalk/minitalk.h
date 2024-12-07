@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 19:18:39 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/12/06 16:43:51 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/12/07 11:59:09 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <signal.h>
 # include <unistd.h>
+# include "ft_printf/ft_printf.h"
 
 typedef struct s_msg
 {

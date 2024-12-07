@@ -6,16 +6,13 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 15:03:15 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/12/06 19:25:49 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/12/07 12:25:49 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_printf/ft_printf.h"
 #include "minitalk.h"
 
-int	pid;
-
-void	send_bit(unsigned char bytes)
+void	send_bit(unsigned char bytes, int pid)
 {
 	int	i;
 
@@ -34,18 +31,19 @@ void	send_bit(unsigned char bytes)
 int	main(int argc, char **argv)
 {
 	unsigned char	*msg;
+	int				pid;
 
 	if (argc != 3)
 	{
-		printf("Provide me with correct info :(\n");
+		ft_printf("Provide me with correct info :(\n");
 		return (1);
 	}
-	pid = atoi(argv[1]);
+	pid = ft_atoi(argv[1]);
 	if (pid < 0)
-		return (printf("PID can not be negative!\n"), 1);
+		return (ft_printf("PID can not be negative!\n"), 1);
 	msg = (unsigned char *) argv[2];
 	while (*msg)
-		send_bit(*(msg++));
-	send_bit('\0');
+		send_bit(*(msg++), pid);
+	send_bit('\0', pid);
 	return (0);
 }
