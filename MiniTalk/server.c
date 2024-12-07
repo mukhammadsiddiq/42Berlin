@@ -6,28 +6,30 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 15:02:17 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/12/07 12:26:26 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/12/07 17:25:19 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-t_msg	alpha = {0, 0};
+t_msg	g_alpha = {0, 0};
 
 void	convert_bits(int bits)
 {
 	if (bits == SIGUSR1)
-		alpha.c |= (1 << (7 - alpha.nobits));
+		g_alpha.c |= (1 << (7 - g_alpha.nobits));
 	else if (bits == SIGUSR2)
-		alpha.c |= (0 >> (7 - alpha.nobits));
-	alpha.nobits++;
-	if (alpha.nobits == 8)
+		g_alpha.c |= (0 >> (7 - g_alpha.nobits));
+	g_alpha.nobits++;
+	if (g_alpha.nobits == 8)
 	{
-		ft_printf("%c", alpha.c);
-		if (!alpha.c)
+		ft_printf("%c", g_alpha.c);
+		if (!g_alpha.c)
+		{
 			ft_printf("\n");
-		alpha.c = 0;
-		alpha.nobits = 0;
+		}
+		g_alpha.c = 0;
+		g_alpha.nobits = 0;
 	}
 }
 
