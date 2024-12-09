@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 15:03:15 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/12/07 16:21:10 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/12/09 15:49:27 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	send_bit(unsigned char bytes, int pid)
 				exit(1);
 			}
 		}
-		usleep(100);
+		usleep(300);
 		i--;
 	}
 }
@@ -55,7 +55,9 @@ int	main(int argc, char **argv)
 		return (ft_printf("PID can not be negative!\n"), 1);
 	msg = (unsigned char *) argv[2];
 	while (*msg)
+	{
 		send_bit(*(msg++), pid);
+	}
 	send_bit('\0', pid);
 	return (0);
 }
