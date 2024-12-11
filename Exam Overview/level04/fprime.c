@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 14:10:06 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/12/11 14:29:44 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/12/11 15:03:53 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,24 @@ void	get_result(int final)
 {
 	int	sum;
 	int	prime;
+	int first;
 
 	if (final == 1)
 		write(1, "1", 1);
 	prime = 2;
-	while (sum != final)
+	first = 1;
+	while (final > 1)
 	{
-
+		if (final % prime == 0)
+		{
+			if (!first)
+				printf("*");
+			printf("%d", prime);
+			final /= prime;
+			first = 0;
+		}
+		else
+			prime++;
 	}
 }
 
@@ -59,8 +70,5 @@ int	main(int argc, char **argv)
 {
 	if (argc == 2)
 		get_result(ft_atoi(argv[1]));
-		printf("%d\n", is_prime(3));
-		printf("%d\n", is_prime(7));
-		printf("%d\n", is_prime(10));
-	write(1, "\n", 1);
+	printf("\n");
 }
