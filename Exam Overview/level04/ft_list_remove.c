@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 16:53:25 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/12/11 18:28:43 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/12/11 18:59:18 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,19 @@ void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 		*begin_list = (*begin_list)->next;
 		free(tmp);
 	}
+	current = *begin_list;
+	while (current && current->next)
+	{
+		if (cmp(current->next->data, data_ref) == 0)
+		{
+			tmp = current->next;
+			current->next = current->next->next;
+			free(tmp);
+		}
+		else
+			current = current->next;
+	}
+
 }
 
 

@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 17:35:51 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/12/09 17:50:50 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/12/11 21:25:59 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,3 +45,5 @@ int	main(int argc, char **argv)
 	}
 	write(1, "\n", 1);
 }
+
+if (!arr) return (NULL);
