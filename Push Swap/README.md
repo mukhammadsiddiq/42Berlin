@@ -132,5 +132,5 @@ Your program will be evaluated on:
 ---
 
 ## Author
-[Your Name]  
+Mukhammad Ibrokhimov
 This project was completed as part of the curriculum at [42 School / Your Institution].
