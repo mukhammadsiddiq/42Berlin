@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 12:40:52 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/12/19 16:24:09 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/12/19 19:49:39 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	sort_three(t_list_node **stack)
 // {
 //     // Create a stack with 3 nodes
 //     t_list_node *stack = create_node(43);
+// 	t_list_node *dst = NULL;
 //     stack->next = create_node(21);
 //     stack->next->next = create_node(32);
 
@@ -66,6 +67,15 @@ void	sort_three(t_list_node **stack)
 
 //     printf("After sorting:\n");
 //     print_stack(stack);
+
+// 	//push from a to b;
+// 	push(&stack, &dst, "pa");
+// 	push(&stack, &dst, "pa");
+// 	push(&stack, &dst, "pa");
+// 	// push(&stack, &dst, "pa");
+// 	print_stack(dst);
+// 	printf("stack after push\n");
+// 	print_stack(stack);
 
 //     // Free the stack
 //     t_list_node *tmp;

@@ -6,7 +6,7 @@
 /*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:23:12 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/12/19 16:24:18 by mukibrok         ###   ########.fr       */
+/*   Updated: 2024/12/19 18:33:03 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,3 +61,23 @@ void	rra(t_list_node **stack, bool value)
 
 }
 
+void	push(t_list_node **src, t_list_node **dst, char *str)
+{
+	t_list_node	*head_src;
+	t_list_node	*head_dst;
+
+	if (!src) return ;
+	head_src = *src;
+	*src = (*src)->next;
+	if (!*dst)
+	{
+		*dst = head_src;
+		(*dst)->next = NULL;
+	}
+	else
+	{
+		head_src->next = *dst;
+		*dst = head_src;
+	}
+	printf("%s\n", str);
+}
