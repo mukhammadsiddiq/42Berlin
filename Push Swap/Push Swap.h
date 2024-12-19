@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Push Swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muxammad <muxammad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mukibrok <mukibrok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 16:58:36 by mukibrok          #+#    #+#             */
-/*   Updated: 2024/12/19 09:58:33 by muxammad         ###   ########.fr       */
+/*   Updated: 2024/12/19 16:07:05 by mukibrok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,6 @@
 # include <limits.h>
 # include <stdbool.h>
 
-char	**ft_split(char const *s, char c);
-size_t	stack_len(t_list *stack);
-void	free_stack(t_list *stack);
-
 typedef struct s_list
 {
 	int				nbr;
@@ -35,6 +31,19 @@ typedef struct s_list
 	struct s_list	*target;
 	struct s_list	*next;
 	struct s_list	*prev;
-}				t_list;
+}				t_list_node;
+
+char	**ft_split(char const *s, char c);
+size_t	stack_len(t_list_node *stack);
+void	free_stack(t_list_node **stack);
+void	sa(t_list_node **stack, bool value);
+void	ra(t_list_node **stack, bool value);
+void	rra(t_list_node **stack, bool value);
+void	sa(t_list_node **stack, bool value);
+void	sort_three(t_list_node **stack);
+void	ra(t_list_node **stack, bool value);
+void	rra(t_list_node **stack, bool value);
+t_list_node	*find_last(t_list_node *stack);
+bool	sorted(t_list_node *stack);
 
 #endif
